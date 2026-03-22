@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.container{
+    display: flex;
+    width: 50%;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+form h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: left;
+}
+.main label{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
