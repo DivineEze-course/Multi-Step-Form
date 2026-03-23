@@ -4,6 +4,8 @@ body{
     justify-content: center;
     height: 100vh;
     background-color: #f0f0f0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
 }
 @media (max-width: 600px) {
     .container {
@@ -87,7 +89,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    padding: 10px;
     margin-left: 50px;
     width: 100%;
     
