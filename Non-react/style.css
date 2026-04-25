@@ -1,0 +1,143 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: normal;
+}
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .bg-sidebar-desktop {
+        display: none;
+    }
+
+    .information {
+        margin-left: 0;
+    }
+}
+.container{
+    display: flex;
+    width: 45%;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    
+}
+.progress{
+    position: relative;
+    width: fit-content;
+}
+.progress .steps{
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.step-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.step.active .step-circle {
+    background-color: #bfe2fd;
+    color: #022c59;
+    border-color: #bfe2fd;
+}
+
+.step-label span {
+    display: block;
+    font-size: 11px;
+    color: #a8c8e8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step-label strong {
+    display: block;
+    font-size: 13px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.container img{
+    height: 500px;
+}
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 50px;
+    width: 100%;
+    
+}
+.information h2{
+    font-size:30px;
+    color: #022c59;
+}
+.information p {
+    color:#878787
+}
+.information label{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+.information label input{
+    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.information label input:focus {
+    border-color: #022c59;
+}
+.button-container{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 85px;
+}
+.button-container button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #022c59;
+    color: white;
+    cursor: pointer;
+}
+#back {
+    background-color: transparent;
+    color: #878787;
+}
+
+#back:hover {
+    color: #022c59;
+}
