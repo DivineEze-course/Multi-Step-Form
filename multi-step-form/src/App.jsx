@@ -41,7 +41,7 @@ function App() {
 }
   return (
     <>
-    <Slider />
+    <Slider steps={step} />
     {renderStep()}
     <NavBar step={step} setStep={setStep} />
     </>
