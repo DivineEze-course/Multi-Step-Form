@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Slider />
-    <Second />
+    <First />
     <NavBar />
     </>
   )
