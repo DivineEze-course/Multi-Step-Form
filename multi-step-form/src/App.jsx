@@ -33,7 +33,7 @@ function App() {
       return <Third addOns={addOns} setAddOns={setAddOns} billing={billing} setBilling={setBilling} />;
 
       case 4:
-      return <Last />;
+      return <Last plan={plan} billing={billing} addOns={addOns} setStep={setStep} />;
 
     default:
       return null;
