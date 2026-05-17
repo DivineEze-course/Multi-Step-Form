@@ -37,11 +37,11 @@ export default function App({addOns, setAddOns, billing, setBilling}) {
 
   return (
     <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md">
-      <h2 className="text-2xl font-bold">
+      <h2 className="text-2xl font-bold text-blue-900">
         Pick Add Ons
       </h2>
 
-      <p className="font-light">
+      <p className="font-light text-gray-500 text-sm">
         Add Ons help advance your gaming experience
       </p>
 

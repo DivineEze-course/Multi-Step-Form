@@ -4,8 +4,8 @@ export default function({plan, billing, addOns, setStep}) {
         return (  
              
              <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
-        <h2 className="text-2xl font-bold">Finishing Up</h2>
-        <p className="font-light">Double check Everything looks OK before confirming.</p>
+        <h2 className="text-2xl font-bold text-blue-900">Finishing Up</h2>
+        <p className="font-light text-gray-500 text-sm">Double check Everything looks OK before confirming.</p>
 
         <div className="flex flex-col bg-gray-100 rounded-lg p-4 mt-5">
             <div className="flex justify-between items-center border-b pb-4">

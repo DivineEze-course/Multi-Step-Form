@@ -12,10 +12,17 @@ export default function({step, setStep,}) {
             setStep(step + 1);
         }
     }
+    const handleConfirm = () => {
+        if(step === 4){
+            alert("Form submitted!");
+        }
+    }
     return (
        <div className="flex justify-between absolute bg-white p-5 w-full bottom-0">
         <button className="font-light" onClick={prevCount} >Go back</button>
-        <button className="border rounded-md border-blue p-3 bg-blue-900 text-white" onClick={nextCount} >Next Step</button>
+        <button className="border rounded-md border-blue p-3 bg-blue-900 text-white" onClick={step === 4 ? handleConfirm : nextCount} >
+            {step === 4 ? "Confirm" : "Next Step"}
+        </button>
        </div>
     )
 }
