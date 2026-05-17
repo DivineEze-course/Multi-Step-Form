@@ -1,10 +1,8 @@
 import { useState } from "react";
 
 
-export default function() {
-const [name,setName] = useState("");
-const [email, setEmail] = useState("");
-const [phone, setPhone] = useState("");
+export default function({name, setName, email, setEmail, phone, setPhone}) {
+
     return (
         <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
         <h2 className="text-2xl font-bold">Personal info</h2>

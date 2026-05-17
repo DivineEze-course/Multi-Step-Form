@@ -4,13 +4,46 @@ import Second from './Components/Second'
 import Third from "./Components/Third"
 import Slider from './Components/Slider'
 import NavBar from './Components/NavBar'
+import Last from './Components/Last'
+
+
 
 function App() {
+    const [step, setStep] = useState(1);
+    const [name,setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [plan, setPlan] = useState("Arcade");
+    const [billing, setBilling] = useState("Monthly");
+    const [addOns, setAddOns] = useState({
+    onlineservice: false,
+    largestorage: false,
+    gamelibrary: false,
+  });
+
+  function renderStep() {
+  switch (step) {
+    case 1:
+      return <First name={name} setName={setName} email={email} setEmail={setEmail} phone={phone} setPhone={setPhone} />;
+
+    case 2:
+      return <Second plan={plan} setPlan={setPlan} billing={billing} setBilling={setBilling} />;
+
+    case 3:
+      return <Third addOns={addOns} setAddOns={setAddOns} billing={billing} setBilling={setBilling} />;
+
+      case 4:
+      return <Last />;
+
+    default:
+      return null;
+  }
+}
   return (
     <>
     <Slider />
-    <Third />
-    <NavBar />
+    {renderStep()}
+    <NavBar step={step} setStep={setStep} />
     </>
   )
 }

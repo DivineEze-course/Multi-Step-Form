@@ -1,8 +1,21 @@
-export default function(){
+import { useState } from 'react'
+
+export default function({step, setStep,}) {
+   
+    const prevCount = () => {
+        if(step > 1){
+            setStep(step - 1);
+        }
+    }
+    const nextCount = () => {
+        if(step < 4){
+            setStep(step + 1);
+        }
+    }
     return (
        <div className="flex justify-between absolute bg-white p-5 w-full bottom-0">
-        <button className="font-light" >Go back</button>
-        <button className="border rounded-md border-blue p-3 bg-blue-900 text-white" >Next Step</button>
+        <button className="font-light" onClick={prevCount} >Go back</button>
+        <button className="border rounded-md border-blue p-3 bg-blue-900 text-white" onClick={nextCount} >Next Step</button>
        </div>
     )
 }

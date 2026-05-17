@@ -1,14 +1,7 @@
 import { useState } from "react";
 
-export default function App() {
-  const [addOns, setAddOns] = useState({
-    onlineservice: false,
-    largestorage: false,
-    gamelibrary: false,
-  });
-
-  const [billing, setBilling] = useState("Monthly");
-
+export default function App({addOns, setAddOns, billing, setBilling}) {
+  
   const addOnOptions = [
     {
       id: 1,

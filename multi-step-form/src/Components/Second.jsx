@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-export default function(){
-    const [plan, setPlan] = useState("Arcade");
-    const [billing, setBilling] = useState("Monthly");
+export default function({plan, setPlan, billing, setBilling}) {
+  
     const billingOptions = ["Monthly", "Yearly"];
 const plans = [
     {
