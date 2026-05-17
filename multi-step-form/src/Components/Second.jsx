@@ -39,35 +39,35 @@ const plans = [
         <div className="month-plan">
             <div className="plan">
                 <img src="" alt="" className="icon" />
-                <div className="flex flex-col gap-4 mt-5">
-                <div className="flex items-center gap-3 border-2 border-gray-400 rounded-lg p-3" value ={"Arcade"} onClick={() => setPlan("Arcade")} >
+                <div className="flex flex-col gap-2 mt-5">
+                <div className={`flex items-center gap-3 border  rounded-lg p-2 ${plan === "Arcade" ? "border-blue-950 bg-blue-100/40" : "border-gray-400"}`} value ={"Arcade"} onClick={() => setPlan("Arcade")} >
                     <img src={plans[0].icon} alt={plans[0].name} />
                     <div>
                     <p>{plans[0].name}</p>
                     <p>${plans[0].price[billing.toLowerCase()]}/{billing === "Yearly" ? "yr" : "mo"}</p>
-                    {billing === "Yearly" && <p className="text-sm text-gray-500">2 months free</p>}
+                    {billing === "Yearly" && <p className="text-xs text-gray-500">2 months free</p>}
                     </div>
                 </div>
-                <div className="flex items-center gap-3 border-2 border-gray-400 rounded-lg p-3" value ={"Advanced"} onClick={() => setPlan("Advanced")} >
+                <div className={`flex items-center gap-3 border rounded-lg p-2 ${plan === "Advanced" ? "border-blue-950 bg-blue-100/40" : "border-gray-400"}`} value ={"Advanced"} onClick={() => setPlan("Advanced")} >
                     <img src={plans[1].icon} alt={plans[1].name} />
                     <div>
                     <p>{plans[1].name}</p>
                     <p>${plans[1].price[billing.toLowerCase()]}/{billing === "Yearly" ? "yr" : "mo"}</p>
-                    {billing === "Yearly" && <p className="text-sm text-gray-500">2 months free</p>}    
+                    {billing === "Yearly" && <p className="text-xs text-gray-500">2 months free</p>}    
                     </div>
                 </div>
-                <div className="flex items-center gap-3 border-2 border-gray-400 rounded-lg p-3" value ={"Pro"} onClick={() => setPlan("Pro")} >
+                <div className={`flex items-center gap-3 border rounded-lg p-2 ${plan === "Pro" ? "border-blue-950 bg-blue-100/40" : "border-gray-400"}`} value ={"Pro"} onClick={() => setPlan("Pro")} >
                     <img src={plans[2].icon} alt={plans[2].name} />
                     <div>
                     <p>{plans[2].name}</p>
                     <p>${plans[2].price[billing.toLowerCase()]}/{billing === "Yearly" ? "yr" : "mo"}</p>
-                    {billing === "Yearly" && <p className="text-sm text-gray-500">2 months free</p>}
+                    {billing === "Yearly" && <p className="text-xs text-gray-500">2 months free</p>}
                     </div>
                 </div>
                 </div>
-                
-                <div className="flex justify-between mt-5"><button className="p-3 border rounded-lg" onClick={() => setBilling("Monthly")}>Monthly</button><button className="p-3 border rounded-lg" onClick={() => setBilling("Yearly")}>Yearly</button></div>
-            </div>
+                 </div>
+                <div className="bg-gray-200 flex gap-3 items-center p-2 rounded-lg justify-center mt-4" onClick={() => setBilling(billing === "Monthly" ? "Yearly" : "Monthly")}><p className={billing === "Monthly" ? "font-bold text-blue-900" : "text-gray-500"}>Monthly</p><i className={`bi bi-toggle-${billing === "Yearly" ? "on" : "off"} text-3xl text-blue-900`}></i><p className={billing === "Yearly" ? "font-bold text-blue-900" : "text-gray-500"}>Yearly</p></div>
+           
         </div>
         </div>
     )
