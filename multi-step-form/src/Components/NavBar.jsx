@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-export default function({step, setStep,}) {
+export default function({step, setStep, setIsConfirm}) {
+   
    
     const prevCount = () => {
         if(step > 1){
@@ -14,7 +15,7 @@ export default function({step, setStep,}) {
     }
     const handleConfirm = () => {
         if(step === 4){
-            alert("Form submitted!");
+          setIsConfirm(() => true)
         }
     }
     return (

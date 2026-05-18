@@ -5,6 +5,7 @@ import Third from "./Components/Third"
 import Slider from './Components/Slider'
 import NavBar from './Components/NavBar'
 import Last from './Components/Last'
+import Confirm from './Components/Confirm'
 
 
 
@@ -15,6 +16,7 @@ function App() {
     const [phone, setPhone] = useState("");
     const [plan, setPlan] = useState("Arcade");
     const [billing, setBilling] = useState("Monthly");
+     const [isConfirm,setIsConfirm] = useState(false);
     const [addOns, setAddOns] = useState({
     onlineservice: false,
     largestorage: false,
@@ -42,8 +44,8 @@ function App() {
   return (
     <>
     <Slider steps={step} />
-    {renderStep()}
-    <NavBar step={step} setStep={setStep} />
+    { isConfirm ? <Confirm /> : renderStep()}
+    { isConfirm ? "" : <NavBar step={step} setStep={setStep} setIsConfirm={setIsConfirm} />}
     </>
   )
 }
