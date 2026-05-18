@@ -10,6 +10,7 @@ import Confirm from './Components/Confirm'
 
 
 function App() {
+  const [insertField,setInsertField] = useState(false);
     const [step, setStep] = useState(1);
     const [name,setName] = useState("");
     const [email, setEmail] = useState("");
@@ -26,7 +27,7 @@ function App() {
   function renderStep() {
   switch (step) {
     case 1:
-      return <First name={name} setName={setName} email={email} setEmail={setEmail} phone={phone} setPhone={setPhone} />;
+      return <First name={name} setName={setName} email={email} setEmail={setEmail} phone={phone} setPhone={setPhone} step={step} insertField={insertField} setInsertField={setInsertField}/>;
 
     case 2:
       return <Second plan={plan} setPlan={setPlan} billing={billing} setBilling={setBilling} />;
@@ -45,7 +46,7 @@ function App() {
     <>
     <Slider steps={step} />
     { isConfirm ? <Confirm /> : renderStep()}
-    { isConfirm ? "" : <NavBar step={step} setStep={setStep} setIsConfirm={setIsConfirm} />}
+    { isConfirm ? "" : <NavBar step={step} setStep={setStep} setIsConfirm={setIsConfirm} name={name} email={email} phone={phone} setInsertField={setInsertField}/>}
     </>
   )
 }

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
-export default function({step, setStep, setIsConfirm}) {
+export default function({step, setStep, setIsConfirm, name, email, phone, setInsertField, }) {
+
+   const isFirstFormValid = (name.trim() !== "" && email.trim() !== "" && phone.trim() !== "");
    
    
     const prevCount = () => {
@@ -9,8 +11,13 @@ export default function({step, setStep, setIsConfirm}) {
         }
     }
     const nextCount = () => {
-        if(step < 4){
+        if(step == 1 && !isFirstFormValid){
+            setInsertField(true);
+            return;
+        }
+       else if(step < 4){
             setStep(step + 1);
+            
         }
     }
     const handleConfirm = () => {
