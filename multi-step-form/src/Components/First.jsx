@@ -6,8 +6,8 @@ export default function({name, setName, email, setEmail, phone, setPhone, step, 
   
        
     return (
-        <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
-        <h2 className="text-2xl font-bold text-blue-900">Personal info</h2>
+        <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md md:shadow-none ">
+        <h2 className="text-2xl lg:text-4xl font-bold text-blue-900">Personal info</h2>
         <p className="pe-4 pt-2 text-wrap font-light text-gray-500 text-sm">Please provide your name, email address and phone number.</p>
 <div className="input-labels flex flex-col pt-5 gap-3">
 <div className="flex flex-col gap-1">

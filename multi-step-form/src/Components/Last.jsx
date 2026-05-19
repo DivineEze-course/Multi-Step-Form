@@ -3,19 +3,20 @@ import { useState } from "react";
 export default function({plan, billing, addOns, setStep}) {
         return (  
              
-             <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
-        <h2 className="text-2xl font-bold text-blue-900">Finishing Up</h2>
+             <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md md:shadow-none ">
+        <h2 className="text-2xl lg:text-3xl font-bold text-blue-900">Finishing Up</h2>
         <p className="font-light text-gray-500 text-sm">Double check Everything looks OK before confirming.</p>
 
-        <div className="flex flex-col bg-gray-100 rounded-lg p-4 mt-5">
-            <div className="flex justify-between items-center border-b pb-4">
+        <div className="flex flex-col  rounded-lg mt-4">
+            <div className="bg-gray-100  rounded-lg p-6 ">
+            <div className="flex justify-between items-center border-b border-gray-300 pb-5">
                 <div>
-                    <p className="font-medium">{plan} ({billing})</p>
+                    <p className="font-medium text-blue-900">{plan} ({billing})</p>
                     <button className="text-sm text-gray-500 underline" onClick={() => setStep(2)}>Change</button>
                 </div>
-                <p className="font-medium">${billing === "Monthly" ? (plan === "Arcade" ? "9/mo" : plan === "Advanced" ? "12/mo" : "15/mo") : (plan === "Arcade" ? "90/yr" : plan === "Advanced" ? "120/yr" : "150/yr")}</p>
+                <p className="font-medium text-blue-900">${billing === "Monthly" ? (plan === "Arcade" ? "9/mo" : plan === "Advanced" ? "12/mo" : "15/mo") : (plan === "Arcade" ? "90/yr" : plan === "Advanced" ? "120/yr" : "150/yr")}</p>
             </div>
-            <div className="mt-4">
+            <div className="flex flex-col justify-between gap-3 mt-4 ">
                 {addOns.onlineservice && <div className="flex justify-between items-center">
                     <p className="text-sm text-gray-500">Online Service</p>
                     <p className="text-sm text-gray-500">+${billing === "Monthly" ? "1/mo" : "10/yr"}</p>
@@ -29,8 +30,9 @@ export default function({plan, billing, addOns, setStep}) {
                     <p className="text-sm text-gray-500">+${billing === "Monthly" ? "2/mo" : "20/yr"}</p>
                 </div>}
             </div>
-            <div className="flex justify-between items-center mt-4 gap-4">
-                <p className="font-medium">Total (per {billing === "Monthly" ? "month" : "year"})</p>
+            </div>
+            <div className="flex justify-between items-center mt-4 gap-4 ps-6 pe-6">
+                <p className="font-medium text-sm text-gray-500">Total (per {billing === "Monthly" ? "month" : "year"})</p>
                 <p className="text-blue-900 font-bold text-lg">${billing === "Monthly" ? (plan === "Arcade" ? 9 : plan === "Advanced" ? 12 : 15) + (addOns.onlineservice ? 1 : 0) + (addOns.largestorage ? 2 : 0) + (addOns.gamelibrary ? 2 : 0) + "/mo" : (plan === "Arcade" ? 90 : plan === "Advanced" ? 120 : 150) + (addOns.onlineservice ? 10 : 0) + (addOns.largestorage ? 20 : 0) + (addOns.gamelibrary ? 20 : 0) + "/yr"}</p>
                 </div>
 

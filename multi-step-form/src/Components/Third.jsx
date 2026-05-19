@@ -36,8 +36,8 @@ export default function App({addOns, setAddOns, billing, setBilling}) {
   ];
 
   return (
-    <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md">
-      <h2 className="text-2xl font-bold text-blue-900">
+    <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md md:shadow-none">
+      <h2 className="text-2xl lg:text-3xl font-bold text-blue-900">
         Pick Add Ons
       </h2>
 
@@ -45,13 +45,14 @@ export default function App({addOns, setAddOns, billing, setBilling}) {
         Add Ons help advance your gaming experience
       </p>
 
-      <div className="mt-4">
+      <div className="mt-8">
         {addOnOptions.map((option) => (
           <div
+          
             key={option.id}
             className={`flex items-center gap-3 w-full justify-around p-2 border rounded-lg mb-3 cursor-pointer ${
               addOns[option.key]
-                ? "border-blue-500 bg-blue-50"
+                ? "border-blue-900 bg-purple-50/60"
                 : "border-gray-300"
             }`}
           >
@@ -64,7 +65,7 @@ export default function App({addOns, setAddOns, billing, setBilling}) {
                   [option.key]: e.target.checked,
                 })
               }
-              className="w-4 h-4"
+              className="w-4 h-4 accent-purple-950"
             />
 
             <div className="ms-4 flex-1">

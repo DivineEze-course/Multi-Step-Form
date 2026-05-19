@@ -1,6 +1,6 @@
 export default function(){
     return (
-        <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
+        <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
            <div className="flex flex-col justify-center items-center gap-3 mt-5">
             <img src="icon-thank-you.svg" className="w-12" />
             <p className="text-2xl text-blue-900 font-bold">Thank You!</p>

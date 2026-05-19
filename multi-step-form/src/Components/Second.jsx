@@ -31,8 +31,8 @@ const plans = [
 
 ]
     return (
-        <div className="flex flex-col absolute top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md ">
-        <h2 className="text-2xl font-bold text-blue-900">Select your plan</h2>
+        <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md md:shadow-none">
+        <h2 className="text-2xl lg:text-3xl font-bold text-blue-900">Select your plan</h2>
         <p className="text-gray-500 text-sm">You have the option of monthly or year billing.</p>
 
         <div className="month-plan">

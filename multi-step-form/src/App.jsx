@@ -43,11 +43,21 @@ function App() {
   }
 }
   return (
-    <>
+    <div className='block md:flex justify-center items-center'>
+    <div className='md:hidden'>
     <Slider steps={step} />
     { isConfirm ? <Confirm /> : renderStep()}
     { isConfirm ? "" : <NavBar step={step} setStep={setStep} setIsConfirm={setIsConfirm} name={name} email={email} phone={phone} setInsertField={setInsertField}/>}
-    </>
+    </div>
+
+      <div className='hidden lg:flex w-4/6 h-150 rounded-lg flex gap-10 justify-center items-center p-4 shadow-md '>
+          <Slider steps={step} />
+        <div className="w-2/3 h-screen relative p-4 flex flex-col justify-center items-center">
+          { isConfirm ? <Confirm /> : renderStep()}
+          { isConfirm ? "" : <NavBar step={step} setStep={setStep} setIsConfirm={setIsConfirm} name={name} email={email} phone={phone} setInsertField={setInsertField}/>}
+        </div>
+      </div>
+    </div>
   )
 }
 
