@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { calculateTotal } from "../calculateTotal";
 
 export default function({plan, billing, addOns, setStep}) {
+    const total = calculateTotal(plan, billing, addOns);
         return (  
              
              <div className="flex flex-col absolute lg:static top-25 right-15 bg-white rounded-lg p-7 pb-12 w-3/4 shadow-md md:shadow-none ">
@@ -33,7 +35,7 @@ export default function({plan, billing, addOns, setStep}) {
             </div>
             <div className="flex justify-between items-center mt-4 gap-4 ps-6 pe-6">
                 <p className="font-medium text-sm text-gray-500">Total (per {billing === "Monthly" ? "month" : "year"})</p>
-                <p className="text-blue-900 font-bold text-lg">${billing === "Monthly" ? (plan === "Arcade" ? 9 : plan === "Advanced" ? 12 : 15) + (addOns.onlineservice ? 1 : 0) + (addOns.largestorage ? 2 : 0) + (addOns.gamelibrary ? 2 : 0) + "/mo" : (plan === "Arcade" ? 90 : plan === "Advanced" ? 120 : 150) + (addOns.onlineservice ? 10 : 0) + (addOns.largestorage ? 20 : 0) + (addOns.gamelibrary ? 20 : 0) + "/yr"}</p>
+                <p className="text-blue-900 font-bold text-lg"> ${total}/{billing === "Monthly" ? "mo" : "yr"}</p>
                 </div>
 
         </div>

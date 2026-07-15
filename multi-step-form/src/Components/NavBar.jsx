@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function({step, setStep, setIsConfirm, name, email, phone, setInsertField, }) {
+export default function({step, setStep, setIsConfirm, name, email, phone, setInsertField,  createSubscription,}) {
 
    const isFirstFormValid = (name.trim() !== "" && email.trim() !== "" && phone.trim() !== "");
    
@@ -20,11 +20,11 @@ export default function({step, setStep, setIsConfirm, name, email, phone, setIns
             
         }
     }
-    const handleConfirm = () => {
-        if(step === 4){
-          setIsConfirm(() => true)
-        }
-    }
+    const handleConfirm = async () => {
+  if (step === 4) {
+    const subscription = await createSubscription();
+  }
+};
     return (
        <div className={`flex justify-between lg:static absolute bg-white p-5 w-full lg:w-3/4 bottom-0 ${step === 1 ? "flex-row-reverse" : ""}`}>
        { step === 1 ? null : <button className="font-light" onClick={prevCount} >Go back</button> }
